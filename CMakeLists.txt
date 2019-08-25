@@ -6,3 +6,7 @@ file(GLOB src src/*.c src/*.cpp)
 add_library(sap STATIC ${src})
 
 add_subdirectory(tests)
+
+enable_testing()
+add_test(NAME ctests COMMAND ctests)
+add_test(NAME cpptests COMMAND cpptests)
