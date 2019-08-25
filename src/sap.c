@@ -22,7 +22,7 @@ void sap_print_help(SapConfig config)
     printf("USAGE:\n\t%s [FLAGS] ", config.name);
 
     // iterate through arguments to print usage
-    for (int i = 0; i < config.argcount; i++)
+    for (unsigned int i = 0; i < config.argcount; i++)
     {
         SapArgument arg = config.arguments[i];
         if (arg.type == SAP_ARG_POSITIONAL)
@@ -41,7 +41,7 @@ void sap_print_help(SapConfig config)
 
     // prints flags
     printf("FLAGS:\n");
-    for (int i = 0; i < config.argcount; i++)
+    for (unsigned int i = 0; i < config.argcount; i++)
     {
         SapArgument arg = config.arguments[i];
         if (arg.type != SAP_ARG_POSITIONAL)
@@ -53,7 +53,7 @@ void sap_print_help(SapConfig config)
 
     // prints arguments
     printf("ARGUMENTS:\n");
-    for (int i = 0; i < config.argcount; i++)
+    for (unsigned int i = 0; i < config.argcount; i++)
     {
         SapArgument arg = config.arguments[i];
         if (arg.type == SAP_ARG_POSITIONAL)
