@@ -2,6 +2,9 @@
 build/
 /build/
 
+# ignore documentation
+docs/
+
 # ignore VS files
 .vs/
 *.sln
