@@ -1,7 +1,11 @@
 #include "sap.h"
-#include <stdio.h>
 
-void print_hello()
+int sap_parse_args(SapConfig config, int argc, char **argv)
 {
-    printf("Hello world!\n");
+    return 0;
+}
+
+void sap_print_help(SapConfig config)
+{
+
 }

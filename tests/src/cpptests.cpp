@@ -5,7 +5,5 @@ extern "C"
 
 int main()
 {
-    print_hello();
-
     return 0;
 }
