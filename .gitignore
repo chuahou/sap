@@ -6,3 +6,5 @@ build/
 .vs/
 *.sln
 *.vcxproj*
+[Dd]ebug/
+[Rr]elease/
