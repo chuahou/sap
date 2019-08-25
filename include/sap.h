@@ -73,6 +73,9 @@ typedef struct SapArgument
 
     /**
      * @brief 1 if argument is required, 0 otherwise
+     *
+     * All arguments of type SAP_ARG_POSITIONAL are considered required
+     * regardless of this value
      */
     int required;
 

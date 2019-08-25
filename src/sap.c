@@ -63,7 +63,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
                     while (isalpha(argv[j][k]) && !found)
                     {
                         // found option
-                        if (argv[j][k] = arg->shortopt)
+                        if (argv[j][k] == arg->shortopt)
                         {
                             arg->set = 1;
                             found = 1;
@@ -80,7 +80,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
                                     }
 
                                     // get value
-                                    else if (_sap_check_arg_type(argv[j + 1]))
+                                    else if (_sap_check_arg_type(argv[j + 1]) == 2)
                                     {
                                         arg->value = argv[j + 1];
                                     }
@@ -95,6 +95,8 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
                                 }
                             }
                         }
+
+                        k++;
                     }
                     break;
                 case 1: // long option
