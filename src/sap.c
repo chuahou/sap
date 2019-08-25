@@ -49,4 +49,16 @@ void sap_print_help(SapConfig config)
             printf("\t-%c, --%s %s\n", arg.shortopt, arg.longopt, arg.help);
         }
     }
+    printf("\n");
+
+    // prints arguments
+    printf("ARGUMENTS:\n");
+    for (int i = 0; i < config.argcount; i++)
+    {
+        SapArgument arg = config.arguments[i];
+        if (arg.type == SAP_ARG_POSITIONAL)
+        {
+            printf("\t%s %s\n", arg.longopt, arg.help);
+        }
+    }
 }
