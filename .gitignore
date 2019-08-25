@@ -1,0 +1,8 @@
+# ignore builds
+build/
+/build/
+
+# ignore VS files
+.vs/
+*.sln
+*.vcxproj*
