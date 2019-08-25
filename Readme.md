@@ -13,12 +13,15 @@ to be portable across as many platforms as possible.
 
 ## Compilation
 
-To compile, simply run:
+Compilation is done using CMake. To do so, run:
 
-```make```
+    mkdir build
+    cd build
+    cmake ..
+    make
 
 ## Doxygen documentation
 
 To generate documentation, enter the repository directory and run:
 
-```doxygen Doxyfile```
+    doxygen Doxyfile
