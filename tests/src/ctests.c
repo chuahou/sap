@@ -21,10 +21,27 @@ int main()
         .help = "Prints this help message"
     };
 
-    SapArgument options[1] = { helpOpt };
+    SapArgument posOpt =
+    {
+        .longopt = "POSITIONALARG",
+        .type = SAP_ARG_POSITIONAL,
+        .required = 1,
+        .help = "A positional argument"
+    };
+
+    SapArgument valueOpt =
+    {
+        .shortopt = 'v',
+        .longopt = "value",
+        .type = SAP_ARG_OPTION_VALUE,
+        .required = 1,
+        .help = "A valued option"
+    };
+
+    SapArgument options[3] = { helpOpt, posOpt, valueOpt };
 
     config.arguments = options;
-    config.argcount = 1;
+    config.argcount = 3;
 
     sap_print_help(config);
 
