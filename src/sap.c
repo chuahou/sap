@@ -52,6 +52,9 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
         config.arguments[i].set = 0;
     }
 
+    // positionals handled so far
+    unsigned int positionalsHandled = 0;
+
     // iterate through the arguments we are looking for
     for (unsigned int i = 0; i < config.argcount; i++)
     {
@@ -142,6 +145,44 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
             }
         }
     }
+
+    for (unsigned int i = 0; i < config.argcount; i++)
+    {
+        SapArgument* arg = config.arguments + i;
+
+        // check for positionals
+        if (arg->type == SAP_ARG_POSITIONAL)
+        {
+            // positionals hit so far
+            unsigned int positionalsHit = 0;
+
+            // iterate through arguments
+            for (int j = 1; j < argc && arg->set == 0; j++)
+            {
+                // check if positional
+                switch (_sap_check_arg_type(argv[j]))
+                {
+                case ARG_NORMAL:
+                    if (positionalsHit == positionalsHandled)
+                    {
+                        arg->value = argv[j];
+                        arg->set = 1;
+                        positionalsHandled++;
+                    }
+                    else
+                    {
+                        positionalsHit++;
+                    }
+                        // all values for options should be ARG_EMPTY now
+                    break;
+                case ARG_ERROR:
+                    return 1;
+                }
+            }
+        }
+    }
+
+    // TODO: check all required arguments are fulfilled
 
     return 0;
 }
