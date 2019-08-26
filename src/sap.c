@@ -99,6 +99,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
                                             == ARG_NORMAL)
                                     {
                                         arg->value = argv[j + 1];
+                                        argv[j + 1] = "";
                                     }
                                     else // no value given
                                     {
@@ -130,6 +131,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
                                     == ARG_NORMAL)
                                 {
                                     arg->value = argv[j + 1];
+                                    argv[j + 1] = "";
                                 }
                             }
                             else
