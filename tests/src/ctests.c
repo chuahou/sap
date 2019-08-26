@@ -89,10 +89,8 @@ SapConfig setup_test_config()
     return config;
 }
 
-void test_value()
+void test_value(SapConfig config)
 {
-    SapConfig config = setup_test_config();
-
     printf("Testing valued options...\n");
 
     printf("Testing simple value\n");
@@ -132,7 +130,14 @@ void test_value()
 
 int main()
 {
-    test_value();
+    // create config
+    SapConfig config = setup_test_config();
+
+    // run tests
+    test_value(config);
+
+    // free config memory
+    free(config.arguments);
 
     return 0;
 }
