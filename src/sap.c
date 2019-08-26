@@ -16,11 +16,6 @@
 #define ARG_EMPTY 4
 
 // checks argument type
-// 0 = short options
-// 1 = long option
-// 2 = normal string
-// 3 = error
-// 4 = empty
 int _sap_check_arg_type(char *arg)
 {
     // flag
