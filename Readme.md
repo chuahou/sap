@@ -20,6 +20,18 @@ Compilation is done using CMake. To do so, run:
     cmake ..
     make
 
+## Usage
+
+Currently, there is no way to install the library and headers. Instead, just compile sap and copy the `libsap.a`
+or `libsap.lib` file from your build to a folder of your choice, and do likewise with `include/sap.h`. During
+compilation, ensure your compiler and linker are pointed to these folders containing `libsap` and `sap.h`.
+
+After doing so, add
+
+    #include <sap.h>
+
+to your application and use it. Actual usage will be documented in the future.
+
 ## Doxygen documentation
 
 To generate documentation, enter the repository directory and run:
