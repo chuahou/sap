@@ -1,3 +1,8 @@
+/**
+ * @file cpptests.cpp
+ * @brief Tests in C++ language
+ */
+
 extern "C"
 {
 #include <sap.h>
