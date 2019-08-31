@@ -195,6 +195,42 @@ void test_opt(SapConfig config)
     printf("Options testing passed\n\n");
 }
 
+/**
+ * @brief Test positional arguments with specified config
+ * 
+ * @param config config
+ */
+void test_pos(SapConfig config)
+{
+    printf("Testing positional arguments...\n");
+
+    printf("Testing order 1\n");
+    char *argv1[] = { "ctests", "-v", "value", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 5, argv1) == 0);
+    assert(config.arguments[2].set == 1);
+    assert(strcmp(config.arguments[2].value, "value") == 0);
+    assert(strcmp(config.arguments[1].value, "posarg") == 0);
+    assert(strcmp(config.arguments[6].value, "posarg2") == 0);
+
+    printf("Testing order 2\n");
+    char *argv2[] = { "ctests", "posarg", "-v", "value", "posarg2" };
+    assert(sap_parse_args(config, 5, argv2) == 0);
+    assert(config.arguments[2].set == 1);
+    assert(strcmp(config.arguments[2].value, "value") == 0);
+    assert(strcmp(config.arguments[1].value, "posarg") == 0);
+    assert(strcmp(config.arguments[6].value, "posarg2") == 0);
+
+    printf("Testing order 3\n");
+    char *argv3[] = { "ctests", "posarg", "posarg2", "-v", "value" };
+    assert(sap_parse_args(config, 5, argv3) == 0);
+    assert(config.arguments[2].set == 1);
+    assert(strcmp(config.arguments[2].value, "value") == 0);
+    assert(strcmp(config.arguments[1].value, "posarg") == 0);
+    assert(strcmp(config.arguments[6].value, "posarg2") == 0);
+
+    printf("Positional arguments testing passed\n\n");
+}
+
 int main()
 {
     // create config
@@ -203,6 +239,7 @@ int main()
     // run tests
     test_value(config);
     test_opt(config);
+    test_pos(config);
 
     // free config memory
     free(config.arguments);
