@@ -95,36 +95,36 @@ void test_value(SapConfig config)
     printf("Testing valued options...\n");
 
     printf("Testing simple value\n");
-    char *argv1[] = { "ctests", "-v", "value", "posarg" };
-    assert(sap_parse_args(config, 4, argv1) == 0);
+    char *argv1[] = { "ctests", "-v", "value", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 5, argv1) == 0);
     assert(config.arguments[2].set == 1);
     assert(strcmp(config.arguments[2].value, "value") == 0);
 
     printf("Testing multiple values\n");
-    char *argv2[] = { "ctests", "-v", "value", "-c", "cvalue", "posarg" };
-    assert(sap_parse_args(config, 6, argv2) == 0);
+    char *argv2[] = { "ctests", "-v", "value", "-c", "cvalue", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 7, argv2) == 0);
     assert(config.arguments[2].set == 1);
     assert(config.arguments[4].set == 1);
     assert(strcmp(config.arguments[2].value, "value") == 0);
     assert(strcmp(config.arguments[4].value, "cvalue") == 0);
 
     printf("Testing incorrect multiple shortopt\n");
-    char *argv3[] = { "ctests", "-vc", "value", "posarg" };
-    assert(sap_parse_args(config, 4, argv3) != 0);
+    char *argv3[] = { "ctests", "-vc", "value", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 5, argv3) != 0);
 
     printf("Testing value option followed by more options values\n");
-    char *argv4[] = { "ctests", "-v", "--cvalue", "posarg" };
-    assert(sap_parse_args(config, 4, argv4) != 0);
+    char *argv4[] = { "ctests", "-v", "--cvalue", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 5, argv4) != 0);
 
     printf("Testing longopt value\n");
-    char *argv5[] = { "ctests", "--value", "value", "posarg" };
-    assert(sap_parse_args(config, 4, argv5) == 0);
+    char *argv5[] = { "ctests", "--value", "value", "posarg", "posarg2" };
+    assert(sap_parse_args(config, 5, argv5) == 0);
     assert(config.arguments[2].set == 1);
     assert(strcmp(config.arguments[2].value, "value") == 0);
 
-    // printf("Testing lack of required value\n");
-    // const char *argv6[] = { "ctests", "posarg", "--cvalue", "abc" };
-    // assert(sap_parse_args(config, 4, argv6) != 0);
+    printf("Testing lack of required value\n");
+    const char *argv6[] = { "ctests", "posarg", "--cvalue", "abc", "posarg2" };
+    assert(sap_parse_args(config, 5, argv6) != 0);
 
     printf("Value testing passed\n\n");
 }

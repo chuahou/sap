@@ -182,7 +182,19 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
         }
     }
 
-    // TODO: check all required arguments are fulfilled
+    // check all required arguments are fulfilled
+    for (unsigned int i = 0; i < config.argcount; i++)
+    {
+        SapArgument* arg = config.arguments + i;
+
+        // positional or required
+        if (arg->required || arg->type == SAP_ARG_POSITIONAL)
+        {
+            // not set
+            if (!arg->set)
+                return 1;
+        }
+    }
 
     return 0;
 }
