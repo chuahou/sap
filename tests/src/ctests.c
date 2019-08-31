@@ -1,8 +1,35 @@
+/**
+ * @file ctests.c
+ * @brief Tests in C language
+ */
+
 #include <assert.h>
 #include <malloc.h>
 #include <sap.h>
 #include <string.h>
 
+/**
+ * @brief Set the up test configuration
+ * 
+ * The test configuration emulates an application ctests v1.2.3 by Chua Hou
+ * with description "C language test for sap".
+ * 
+ * It supports the following options:
+ * 
+ * -h --help    print help message
+ * 
+ * -v --value   a valued option
+ * 
+ * -c --cvalue  another valued option
+ * 
+ * -a --aflag   flag A
+ * 
+ * -b --bflag   flag B
+ * 
+ * and takes 2 positional arguments.
+ * 
+ * @return SapConfig test configuration
+ */
 SapConfig setup_test_config()
 {
     SapConfig config =
@@ -90,6 +117,11 @@ SapConfig setup_test_config()
     return config;
 }
 
+/**
+ * @brief Tests valued arguments with provided config
+ * 
+ * @param config config
+ */
 void test_value(SapConfig config)
 {
     printf("Testing valued options...\n");
@@ -136,6 +168,7 @@ int main()
 
     // run tests
     test_value(config);
+    test_opt(config);
 
     // free config memory
     free(config.arguments);
