@@ -161,6 +161,40 @@ void test_value(SapConfig config)
     printf("Value testing passed\n\n");
 }
 
+/**
+ * @brief Test options with provided config
+ * 
+ * @param config config
+ */
+void test_opt(SapConfig config)
+{
+    printf("Testing options...\n");
+
+    printf("Testing setting of option\n");
+    char *argv1[] = { "ctests", "-v", "value", "posarg", "posarg2", "-a" };
+    assert(sap_parse_args(config, 6, argv1) == 0);
+    assert(config.arguments[0].set == 0);
+    assert(config.arguments[1].set == 1);
+    assert(config.arguments[2].set == 1);
+    assert(config.arguments[3].set == 1);
+    assert(config.arguments[4].set == 0);
+    assert(config.arguments[5].set == 0);
+    assert(config.arguments[6].set == 1);
+
+    printf("Testing multiple options\n");
+    char *argv2[] = { "ctests", "-v", "value", "posarg", "posarg2", "-abh" };
+    assert(sap_parse_args(config, 6, argv2) == 0);
+    assert(config.arguments[0].set == 1);
+    assert(config.arguments[1].set == 1);
+    assert(config.arguments[2].set == 1);
+    assert(config.arguments[3].set == 1);
+    assert(config.arguments[4].set == 0);
+    assert(config.arguments[5].set == 1);
+    assert(config.arguments[6].set == 1);
+
+    printf("Options testing passed\n\n");
+}
+
 int main()
 {
     // create config
