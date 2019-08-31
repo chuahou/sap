@@ -155,7 +155,7 @@ void test_value(SapConfig config)
     assert(strcmp(config.arguments[2].value, "value") == 0);
 
     printf("Testing lack of required value\n");
-    const char *argv6[] = { "ctests", "posarg", "--cvalue", "abc", "posarg2" };
+    char *argv6[] = { "ctests", "posarg", "--cvalue", "abc", "posarg2" };
     assert(sap_parse_args(config, 5, argv6) != 0);
 
     printf("Value testing passed\n\n");
