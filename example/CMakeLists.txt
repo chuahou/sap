@@ -1,3 +1,6 @@
+# set C++11
+set (CMAKE_CXX_STANDARD 11)
+
 # basic configuration
 cmake_minimum_required(VERSION 3.10)
 project(sap_example VERSION 0.0.1 DESCRIPTION "Example application for SAP")
