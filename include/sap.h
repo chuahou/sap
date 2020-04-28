@@ -190,10 +190,7 @@ int _sap_check_arg_type(char *arg)
 		if (arg[0] == '\0') return ARG_EMPTY;
 
 		// normal string
-		if (isalpha(arg[0])) return ARG_NORMAL;
-
-		// unknown
-		else return ARG_ERROR;
+		return ARG_NORMAL;
 	}
 }
 
