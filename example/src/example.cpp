@@ -188,4 +188,62 @@ int main(int argc, char **argv) // get arguments the normal way
 		sap_print_help(sap_config);
 		return 1;
 	}
+
+	// --- CALCULATION AND OUTPUT ---
+	// This part doesn't have much to do with SAP. Pretty much all we need SAP
+	// for has been completed.
+
+	// addition
+	if (sap_args[1].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << i_x + i_y << std::endl;
+		else
+			std::cout << lf_x + lf_y << std::endl;
+	}
+	// subtraction
+	else if (sap_args[2].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << i_x - i_y << std::endl;
+		else
+			std::cout << lf_x - lf_y << std::endl;
+	}
+	// multiplication
+	else if (sap_args[3].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << i_x * i_y << std::endl;
+		else
+			std::cout << lf_x * lf_y << std::endl;
+	}
+	// division
+	else if (sap_args[4].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << i_x / i_y << std::endl;
+		else
+			std::cout << lf_x / lf_y << std::endl;
+	}
+	// modulo
+	else if (sap_args[5].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << i_x % i_y << std::endl;
+		else
+		{
+			std::cerr << "Modulo not supportd for floats" << std::endl;
+			return 1;
+		}
+	}
+	// exponent
+	else if (sap_args[6].set)
+	{
+		if (type == TYPE_INT)
+			std::cout << round(pow(i_x, i_y)) << std::endl;
+		else
+			std::cout << pow(lf_x, lf_y) << std::endl;
+	}
+
+	return 0;
 }
