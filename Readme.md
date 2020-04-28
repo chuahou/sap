@@ -1,5 +1,9 @@
 # Simple Argument Parser (SAP)
 
+[![Build Status](https://travis-ci.org/chuahou/sap.svg?branch=master)](https://travis-ci.org/chuahou/sap)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/chuahou/sap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chuahou/sap/alerts/)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/chuahou/sap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chuahou/sap/context:cpp)
+
 A simple argument parser written for C/C++ CLI applications. It is written in C
 such that both only-C applications and C++ applications can make use of it.
 
