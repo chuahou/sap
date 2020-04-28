@@ -122,8 +122,9 @@ int main(int argc, char **argv) // get arguments the normal way
 
 	// --- PARSING ARGUMENTS ---
 	// Simply run sap_parse_args() to perform the parsing. It will return 1 if
-	// unsuccessful (e.g. if a required argument is missing).
-	if (sap_parse_args(sap_config, argc, argv))
+	// unsuccessful (e.g. if a required argument is missing). sap_args[0].set
+	// checks if -h asking for help has been set.
+	if (sap_parse_args(sap_config, argc, argv) || sap_args[0].set)
 	{
 		sap_print_help(sap_config); // print help message if wrong
 		return 1;
