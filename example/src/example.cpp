@@ -16,7 +16,8 @@
 
 #include <cmath> // pow
 #include <cstddef> // size_t
-#include <iostream> // std::cout
+#include <iostream> // std::cout, std::cerr
+#include <string> // std::string, std::stoll, std::stod
 
 #include "sap.h" // include single header file
 
@@ -118,4 +119,72 @@ int main(int argc, char **argv) // get arguments the normal way
 	sap_args[9].help     = "Second argument for calculator";
 	sap_args[9].type     = SAP_ARG_POSITIONAL;
 	sap_args[9].required = 1;
+
+	// --- PARSING ARGUMENTS ---
+	// Simply run sap_parse_args() to perform the parsing. It will return 1 if
+	// unsuccessful (e.g. if a required argument is missing).
+	if (sap_parse_args(sap_config, argc, argv))
+	{
+		sap_print_help(sap_config); // print help message if wrong
+		return 1;
+	}
+
+	// Next let's check that exactly one of the operators has been chosen. Every
+	// option / positional present will have .set set to 1, and will be 0
+	// otherwise.
+	unsigned int operators_selected = 0;
+	for (size_t i = 1; i <= 6; i++) // iterate through operators
+		operators_selected += sap_args[i].set;
+	if (operators_selected != 1)
+	{
+		std::cerr << "Use only one operator" << std::endl;
+		sap_print_help(sap_config);
+		return 1;
+	}
+
+	// Next, we check that the -t option is set to int or float and parse x
+	// and y, printing the help message if anything is invalid.
+	long long i_x, i_y; // ints for int mode
+	double lf_x, lf_y; // doubles for float mode
+	int type; // store which type we are using
+	const int TYPE_INT = 0;
+	const int TYPE_FLOAT = 1;
+	std::string type_opt = sap_args[7].value;
+
+	try
+	{
+		// check for int
+		if (type_opt == "int") // thanks std::string
+		{
+			// int mode
+			type = TYPE_INT;
+
+			// convert x and y to long long
+			i_x = std::stoll(sap_args[8].value);
+			i_y = std::stoll(sap_args[9].value);
+		}
+		// check for float
+		else if (type_opt == "float")
+		{
+			// float mode
+			type = TYPE_FLOAT;
+
+			// convert x and y to double
+			lf_x = std::stod(sap_args[8].value);
+			lf_y = std::stod(sap_args[9].value);
+		}
+		// invalid -t value
+		else
+		{
+			std::cerr << "Invalid type, use int or float" << std::endl;
+			sap_print_help(sap_config);
+			return 1;
+		}
+	}
+	catch (const std::invalid_argument& e) // failed to parse x or y
+	{
+		std::cerr << "Invalid numbers" << std::endl;
+		sap_print_help(sap_config);
+		return 1;
+	}
 }
