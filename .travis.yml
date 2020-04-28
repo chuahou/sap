@@ -1,19 +1,6 @@
-matrix:
-  include:
-    - language: cpp
-      compilers:
-        - g++
-        - clang++
-      os:
-        - linux
-        - osx
-    - language: c
-      compilers:
-        - gcc
-        - clang
-      os:
-        - linux
-        - osx
+os:
+  - linux
+  - osx
 
 script:
   - mkdir build
