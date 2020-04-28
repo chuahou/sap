@@ -4,15 +4,20 @@ matrix:
       compilers:
         - g++
         - clang++
+      os:
+        - linux
+        - osx
     - language: c
       compilers:
         - gcc
         - clang
-    - os: linux
-    - os: osx
+      os:
+        - linux
+        - osx
 
 script:
   - mkdir build
   - cd build
   - cmake ..
+  - make
   - make test
