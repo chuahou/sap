@@ -22,9 +22,16 @@
 #ifndef __SAP_H_INCLUDED__
 #define __SAP_H_INCLUDED__
 
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+// change headers depending on C/C++
+#ifdef __cplusplus
+	#include <cctype>
+	#include <cstdio>
+	#include <cstring>
+#else
+	#include <ctype.h>
+	#include <stdio.h>
+	#include <string.h>
+#endif
 
 #ifndef DOXYGEN_IGNORE // exclude from documentation
 	#define ARG_SHORTOPT 0
