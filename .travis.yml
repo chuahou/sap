@@ -8,3 +8,8 @@ script:
   - cmake ..
   - make
   - make test
+  - cd ../example
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
