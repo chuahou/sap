@@ -14,10 +14,10 @@
  * projects to be portable across as many platforms as possible.
  */
 
- /**
-  * @file sap.h
-  * @brief Primary header file for sap
-  */
+/**
+ * @file sap.h
+ * @brief Primary header file for sap
+ */
 
 #ifndef __SAP_H_INCLUDED__
 #define __SAP_H_INCLUDED__
@@ -27,20 +27,20 @@
  */
 typedef enum SapArgumentType
 {
-    /**
-     * @brief Option that does not take value
-     */
-    SAP_ARG_OPTION,
+	/**
+	 * @brief Option that does not take value
+	 */
+	SAP_ARG_OPTION,
 
-    /**
-     * @brief Option that takes value
-     */
-    SAP_ARG_OPTION_VALUE,
+	/**
+	 * @brief Option that takes value
+	 */
+	SAP_ARG_OPTION_VALUE,
 
-    /**
-     * @brief Positional argument
-     */
-    SAP_ARG_POSITIONAL
+	/**
+	 * @brief Positional argument
+	 */
+	SAP_ARG_POSITIONAL
 } SapArgumentType;
 
 /**
@@ -51,43 +51,43 @@ typedef enum SapArgumentType
  */
 typedef struct SapArgument
 {
-    /**
-     * @brief Short option
-     */
-    char shortopt;
+	/**
+	 * @brief Short option
+	 */
+	char shortopt;
 
-    /**
-     * @brief Long option name / argument name
-     */
-    const char *longopt;
+	/**
+	 * @brief Long option name / argument name
+	 */
+	const char *longopt;
 
-    /**
-     * @brief Short help message
-     */
-    const char *help;
+	/**
+	 * @brief Short help message
+	 */
+	const char *help;
 
-    /**
-     * @brief Type of argument
-     */
-    SapArgumentType type;
+	/**
+	 * @brief Type of argument
+	 */
+	SapArgumentType type;
 
-    /**
-     * @brief 1 if argument is required, 0 otherwise
-     *
-     * All arguments of type SAP_ARG_POSITIONAL are considered required
-     * regardless of this value
-     */
-    int required;
+	/**
+	 * @brief 1 if argument is required, 0 otherwise
+	 *
+	 * All arguments of type SAP_ARG_POSITIONAL are considered required
+	 * regardless of this value
+	 */
+	int required;
 
-    /**
-     * @brief Will be set to 1 if argument has been provided, 0 otherwise
-     */
-    int set;
+	/**
+	 * @brief Will be set to 1 if argument has been provided, 0 otherwise
+	 */
+	int set;
 
-    /**
-     * @brief Value set for this argument
-     */
-    const char *value;
+	/**
+	 * @brief Value set for this argument
+	 */
+	const char *value;
 } SapArgument;
 
 /**
@@ -95,45 +95,45 @@ typedef struct SapArgument
  */
 typedef struct SapConfig
 {
-    /**
-     * @brief Name of the application
-     */
-    const char *name;
+	/**
+	 * @brief Name of the application
+	 */
+	const char *name;
 
-    /**
-     * @brief Major version
-     */
-    unsigned int version_major;
+	/**
+	 * @brief Major version
+	 */
+	unsigned int version_major;
 
-    /**
-     * @brief Minor version
-     */
-    unsigned int version_minor;
+	/**
+	 * @brief Minor version
+	 */
+	unsigned int version_minor;
 
-    /**
-     * @brief Patch version
-     */
-    unsigned int version_patch;
+	/**
+	 * @brief Patch version
+	 */
+	unsigned int version_patch;
 
-    /**
-     * @brief Author's name
-     */
-    const char *author;
+	/**
+	 * @brief Author's name
+	 */
+	const char *author;
 
-    /**
-     * @brief Short description of program
-     */
-    const char *about;
+	/**
+	 * @brief Short description of program
+	 */
+	const char *about;
 
-    /**
-     * @brief List of argument configurations
-     */
-    SapArgument *arguments;
+	/**
+	 * @brief List of argument configurations
+	 */
+	SapArgument *arguments;
 
-    /**
-     * @brief Number of argument configurations in arguments
-     */
-    unsigned int argcount;
+	/**
+	 * @brief Number of argument configurations in arguments
+	 */
+	unsigned int argcount;
 } SapConfig;
 
 /**
