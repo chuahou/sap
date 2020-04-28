@@ -1,0 +1,18 @@
+matrix:
+  include:
+    - language: cpp
+      compilers:
+        - g++
+        - clang++
+    - language: c
+      compilers:
+        - gcc
+        - clang
+    - os: linux
+    - os: osx
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make test
