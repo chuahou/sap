@@ -232,6 +232,27 @@ void test_pos(SapConfig config)
 	printf("Positional arguments testing passed\n\n");
 }
 
+void test_nonalpha(SapConfig config)
+{
+	printf("Testing nonalpha positional and valued arguments...\n");
+
+	printf("Testing positional arguments\n");
+	char *argv1[] = { "ctests", "123abc", "abcdefg", "-v", "value" };
+	assert(sap_parse_args(config, 5, argv1) == 0);
+	assert(config.arguments[2].set == 1);
+	assert(strcmp(config.arguments[2].value, "value") == 0);
+	assert(strcmp(config.arguments[1].value, "123abc") == 0);
+	assert(strcmp(config.arguments[6].value, "abcdefg") == 0);
+
+	printf("Testing valued option\n");
+	char *argv2[] = { "ctests", "123abc", "abcdefg", "-v", "123" };
+	assert(sap_parse_args(config, 5, argv2) == 0);
+	assert(config.arguments[2].set == 1);
+	assert(strcmp(config.arguments[2].value, "123") == 0);
+	assert(strcmp(config.arguments[1].value, "123abc") == 0);
+	assert(strcmp(config.arguments[6].value, "abcdefg") == 0);
+}
+
 int main()
 {
 	// create config
