@@ -22,6 +22,13 @@
 #ifndef __SAP_H_INCLUDED__
 #define __SAP_H_INCLUDED__
 
+#define SAP_H_MAJOR_VERSION 0
+#define SAP_H_MINOR_VERSION 0
+#define SAP_H_REVISION 2
+#define SAP_H_VERSION "0.0.2"
+#define SAP_H_VERSION_CHECK(maj, min) \
+	((maj==MYLIB_MAJOR_VERSION) && (min<=MYLIB_MINOR_VERSION))
+
 // change headers depending on C/C++
 #ifdef __cplusplus
 	#include <cctype>
