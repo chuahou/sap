@@ -7,3 +7,6 @@ add_executable(example src/example.cpp)
 
 # header file
 target_include_directories(example PRIVATE ../include)
+
+# build in debug
+set(CMAKE_BUILD_TYPE Debug)
