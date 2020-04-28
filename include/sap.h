@@ -31,7 +31,6 @@
 	#define ARG_LONGOPT 1
 	#define ARG_NORMAL 2
 	#define ARG_ERROR 3
-	#define ARG_EMPTY 4
 #endif
 
 /**
@@ -183,15 +182,9 @@ int _sap_check_arg_type(char *arg)
 		// unknown
 		else return ARG_ERROR;
 	}
-	// not flag
+	// normal string
 	else
-	{
-		// empty
-		if (arg[0] == '\0') return ARG_EMPTY;
-
-		// normal string
 		return ARG_NORMAL;
-	}
 }
 
 int sap_parse_args(SapConfig config, int argc, char **argv)
