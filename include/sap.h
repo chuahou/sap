@@ -26,11 +26,13 @@
 #include <stdio.h>
 #include <string.h>
 
-#define ARG_SHORTOPT 0
-#define ARG_LONGOPT 1
-#define ARG_NORMAL 2
-#define ARG_ERROR 3
-#define ARG_EMPTY 4
+#ifndef DOXYGEN_IGNORE // exclude from documentation
+	#define ARG_SHORTOPT 0
+	#define ARG_LONGOPT 1
+	#define ARG_NORMAL 2
+	#define ARG_ERROR 3
+	#define ARG_EMPTY 4
+#endif
 
 /**
  * @brief Enum describing argument type
@@ -166,6 +168,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv);
 void sap_print_help(SapConfig config);
 
 // checks argument type
+/** @private */
 int _sap_check_arg_type(char *arg)
 {
 	// flag
