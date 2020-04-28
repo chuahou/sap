@@ -5,8 +5,9 @@
 
 #include <assert.h>
 #include <malloc.h>
-#include <sap.h>
 #include <string.h>
+
+#include "sap.h"
 
 /**
  * @brief Set the up test configuration

@@ -3,14 +3,14 @@
  * @brief Tests in C++ language
  */
 
-extern "C"
-{
-#include <sap.h>
-}
-
 #include <cassert>
 #include <cstdio>
 #include <cstring>
+
+extern "C"
+{
+#include "sap.h"
+}
 
 /**
  * @brief Set the up test configuration
