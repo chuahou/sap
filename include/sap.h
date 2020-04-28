@@ -196,6 +196,12 @@ int _sap_check_arg_type(char *arg)
 
 int sap_parse_args(SapConfig config, int argc, char **argv)
 {
+	// keep track of which tokens have been parsed
+	// we only update this for ARG_NORMAL arguments (since we want to keep track
+	// of which are positional and which are valued options
+	int parsed[argc]; // 0 = not parsed, 1 = parsed
+	for (int i = 0; i < argc; i++) parsed[i] = 0;
+
 	// set all arguments to not set
 	for (unsigned int i = 0; i < config.argcount; i++)
 	{
@@ -247,7 +253,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
 											== ARG_NORMAL)
 									{
 										arg->value = argv[j + 1];
-										argv[j + 1] = "";
+										parsed[j + 1] = 1;
 									}
 									else // no value given
 									{
@@ -279,7 +285,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
 									== ARG_NORMAL)
 								{
 									arg->value = argv[j + 1];
-									argv[j + 1] = "";
+									parsed[j + 1] = 1;
 								}
 							}
 							else
@@ -313,6 +319,7 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
 				switch (_sap_check_arg_type(argv[j]))
 				{
 				case ARG_NORMAL:
+					if (parsed[j]) break; // this was a valued option
 					if (positionalsHit == positionalsHandled)
 					{
 						arg->value = argv[j];
@@ -323,7 +330,6 @@ int sap_parse_args(SapConfig config, int argc, char **argv)
 					{
 						positionalsHit++;
 					}
-						// all values for options should be ARG_EMPTY now
 					break;
 				case ARG_ERROR:
 					return 1;
