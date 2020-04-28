@@ -1,0 +1,16 @@
+path_classifiers:
+  test:
+    - exclude: / # we want tests to be analysed too
+extraction:
+  cpp:
+    index:
+      build_command:
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
+        - cd ../example
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
