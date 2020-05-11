@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/chuahou/sap.svg?branch=master)](https://travis-ci.org/chuahou/sap)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/chuahou/sap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chuahou/sap/alerts/)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/chuahou/sap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/chuahou/sap/context:cpp)
+![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A simple argument parser written for C/C++ CLI applications. It is written in C
