@@ -1,3 +1,8 @@
+# Important note
+
+If in doubt, and you want to contribute, **just do it**. Send a pull request and
+I'll help you out in getting it in order.
+
 # Contributing Guidelines
 
 Based on [git/git's patch guidelines](https://github.com/git/git/blob/master/Documentation/SubmittingPatches)
