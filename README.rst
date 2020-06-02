@@ -40,8 +40,8 @@ None, other than the C standard library.
 Documentation
 =============
 
-Built documentation can be found `here <https://chuahou.dev/sap/html>`. To
-build a local copy, run `./generate_docs.sh`.
+Built documentation can be found `here <https://chuahou.dev/sap/html>`_. To
+build a local copy, run ``./generate_docs.sh``.
 
 Dependencies for Documentation
 ------------------------------
