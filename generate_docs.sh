@@ -3,3 +3,4 @@
 rm docs/ docsrc/xml/ -rf
 doxygen Doxyfile
 make -C docsrc html
+touch docs/.nojekyll
