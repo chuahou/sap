@@ -1,5 +1,5 @@
+// SPDX-License-Identifier: MIT
 // Copyright (c) 2020 Chua Hou
-// MIT License information can be found at the bottom of the file
 
 /**
  * @mainpage
