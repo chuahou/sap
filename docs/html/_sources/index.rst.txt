@@ -1,12 +1,15 @@
-############################
-Simple Argument Parser (SAP)
-############################
+######################
+Simple Argument Parser
+######################
 
-|Build Status|
-|Total alerts|
-|Language grade: C/C++|
+|On GitHub|
 |Maintenance|
 |License: MIT|
+|Total alerts|
+|Language grade: C/C++|
+
+Introduction
+============
 
 A simple argument parser written for C/C++ CLI applications. It is
 written in C such that both only-C applications and C++ applications can
@@ -20,37 +23,18 @@ reusable fashion the functionality I need to use for my own projects.
 I chose not to use getopt or any other similar options as I would like
 my projects to be portable across as many platforms as possible.
 
-Usage
-=====
+Contents
+========
 
-SAP is now written as a single header file. To use it, simply copy
-``include/sap.h`` to your project’s header directories, or add
-``include`` to your project’s include directories, then add to your
-code:
+.. toctree::
+	:maxdepth: 2
 
-.. code-block:: cpp
+	quickstart
+	header
+	contact
 
-	#include "sap.h"
-
-Dependencies
-============
-
-None, other than the C standard library.
-
-Documentation
-=============
-
-Built documentation can be found `here <https://chuahou.dev/sap/html>`. To
-build a local copy, run `./generate_docs.sh`.
-
-Dependencies for Documentation
-------------------------------
-
-* Doxygen
-* Sphinx
-* Sphinx ReadTheDocs theme
-* Breathe
-
+.. |On GitHub| image:: https://img.shields.io/badge/Hosted_on-GitHub-blue.svg
+	:target: https://github.com/chuahou/sap
 .. |Build Status| image:: https://travis-ci.org/chuahou/sap.svg?branch=master
 	:target: https://travis-ci.org/chuahou/sap
 .. |Total alerts| image:: https://img.shields.io/lgtm/alerts/g/chuahou/sap.svg?logo=lgtm&logoWidth=18

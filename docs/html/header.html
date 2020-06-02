@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Header Documentation &mdash; Simple Argument Parser 0.0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contact" href="contact.html" />
+    <link rel="prev" title="Quick start" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Simple Argument Parser
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Header Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#macros">Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structs">Structs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main-configuration">Main configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#argument-configuration">Argument configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#argument-types">Argument types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Simple Argument Parser</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Header Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/header.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="header-documentation">
+<h1><a class="toc-backref" href="#id1">Header Documentation</a><a class="headerlink" href="#header-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#header-documentation" id="id1">Header Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#macros" id="id2">Macros</a></p></li>
+<li><p><a class="reference internal" href="#structs" id="id3">Structs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#main-configuration" id="id4">Main configuration</a></p></li>
+<li><p><a class="reference internal" href="#argument-configuration" id="id5">Argument configuration</a></p></li>
+<li><p><a class="reference internal" href="#argument-types" id="id6">Argument types</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id7">Functions</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="macros">
+<h2><a class="toc-backref" href="#id2">Macros</a><a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Macro</p></th>
+<th class="head"><p>Remark</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SAP_H_MAJOR_VERSION</span></code></p></td>
+<td><p>Current major version</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SAP_H_MINOR_VERSION</span></code></p></td>
+<td><p>Current minor version</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SAP_H_REVISION</span></code></p></td>
+<td><p>Current revision</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">SAP_H_VERSION</span></code></p></td>
+<td><p>Full version string</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SAP_H_VERSION_CHECK</span></code></p></td>
+<td><p>Check compatible version of SAP</p></td>
+</tr>
+</tbody>
+</table>
+<p>To check if the header is a compatible version of X.Y (i.e. the major
+version is equal to X and the minor version is at least Y), use</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">SAP_H_VERSION_CHECK</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// error</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="structs">
+<h2><a class="toc-backref" href="#id3">Structs</a><a class="headerlink" href="#structs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="main-configuration">
+<h3><a class="toc-backref" href="#id4">Main configuration</a><a class="headerlink" href="#main-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The main configuration is done using <code class="docutils literal notranslate"><span class="pre">SapConfig</span></code>. Metadata for the
+application is set in these fields, and a list of <a class="reference external" href="#argument-configuration">argument
+configurations</a> is set in <code class="docutils literal notranslate"><span class="pre">arguments</span></code>.</p>
+<dl class="cpp struct">
+<dt id="_CPPv49SapConfig">
+<span id="_CPPv39SapConfig"></span><span id="_CPPv29SapConfig"></span><span id="SapConfig"></span><span class="target" id="structSapConfig"></span><em class="property">struct </em><code class="sig-name descname">SapConfig</code><a class="headerlink" href="#_CPPv49SapConfig" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Struct containing configuration of application and arguments. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig4nameE">
+<span id="_CPPv3N9SapConfig4nameE"></span><span id="_CPPv2N9SapConfig4nameE"></span><span id="SapConfig::name__cCP"></span><span class="target" id="structSapConfig_1a0e662941264d3d05e8cf7adaf4f01a59"></span><em class="property">const</em> char *<code class="sig-name descname">name</code><a class="headerlink" href="#_CPPv4N9SapConfig4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Name of the application. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig13version_majorE">
+<span id="_CPPv3N9SapConfig13version_majorE"></span><span id="_CPPv2N9SapConfig13version_majorE"></span><span id="SapConfig::version_major__unsigned-i"></span><span class="target" id="structSapConfig_1a952d3415bd3edb118b06511250f92c32"></span>unsigned int <code class="sig-name descname">version_major</code><a class="headerlink" href="#_CPPv4N9SapConfig13version_majorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Major version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig13version_minorE">
+<span id="_CPPv3N9SapConfig13version_minorE"></span><span id="_CPPv2N9SapConfig13version_minorE"></span><span id="SapConfig::version_minor__unsigned-i"></span><span class="target" id="structSapConfig_1a8291a0fb4b1094d6316a5080d38b68f3"></span>unsigned int <code class="sig-name descname">version_minor</code><a class="headerlink" href="#_CPPv4N9SapConfig13version_minorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Minor version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig13version_patchE">
+<span id="_CPPv3N9SapConfig13version_patchE"></span><span id="_CPPv2N9SapConfig13version_patchE"></span><span id="SapConfig::version_patch__unsigned-i"></span><span class="target" id="structSapConfig_1ad3de5bb87ed4e7664993b19f13c1435f"></span>unsigned int <code class="sig-name descname">version_patch</code><a class="headerlink" href="#_CPPv4N9SapConfig13version_patchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Patch version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig6authorE">
+<span id="_CPPv3N9SapConfig6authorE"></span><span id="_CPPv2N9SapConfig6authorE"></span><span id="SapConfig::author__cCP"></span><span class="target" id="structSapConfig_1a0e9d46a60a7a6d1f30c25dec1ec18bc7"></span><em class="property">const</em> char *<code class="sig-name descname">author</code><a class="headerlink" href="#_CPPv4N9SapConfig6authorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Author’s name. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig5aboutE">
+<span id="_CPPv3N9SapConfig5aboutE"></span><span id="_CPPv2N9SapConfig5aboutE"></span><span id="SapConfig::about__cCP"></span><span class="target" id="structSapConfig_1a591a3804b76bf221be7735d2568fd81b"></span><em class="property">const</em> char *<code class="sig-name descname">about</code><a class="headerlink" href="#_CPPv4N9SapConfig5aboutE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Short description of program. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig9argumentsE">
+<span id="_CPPv3N9SapConfig9argumentsE"></span><span id="_CPPv2N9SapConfig9argumentsE"></span><span id="SapConfig::arguments__SapArgumentP"></span><span class="target" id="structSapConfig_1abd3a6936ebb2e6c742713440b781c321"></span><a class="reference internal" href="#_CPPv411SapArgument" title="SapArgument">SapArgument</a> *<code class="sig-name descname">arguments</code><a class="headerlink" href="#_CPPv4N9SapConfig9argumentsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of argument configurations. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N9SapConfig8argcountE">
+<span id="_CPPv3N9SapConfig8argcountE"></span><span id="_CPPv2N9SapConfig8argcountE"></span><span id="SapConfig::argcount__unsigned-i"></span><span class="target" id="structSapConfig_1affab4326fcc9a718a3374f4de4fba629"></span>unsigned int <code class="sig-name descname">argcount</code><a class="headerlink" href="#_CPPv4N9SapConfig8argcountE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of argument configurations in arguments. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="argument-configuration">
+<h3><a class="toc-backref" href="#id5">Argument configuration</a><a class="headerlink" href="#argument-configuration" title="Permalink to this headline">¶</a></h3>
+<p>This struct will contain the configuration, and later the result, of
+each argument the application expects / can handle.</p>
+<dl class="cpp struct">
+<dt id="_CPPv411SapArgument">
+<span id="_CPPv311SapArgument"></span><span id="_CPPv211SapArgument"></span><span id="SapArgument"></span><span class="target" id="structSapArgument"></span><em class="property">struct </em><code class="sig-name descname">SapArgument</code><a class="headerlink" href="#_CPPv411SapArgument" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Struct containing single argument configuration. </p>
+<p>The application will set up shortopt, longopt, help and type, then set and value will be set by <a class="reference internal" href="#sap_8h_1a53002d7623bd466c74fc5760d343c2df"><span class="std std-ref">sap_parse_args()</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument8shortoptE">
+<span id="_CPPv3N11SapArgument8shortoptE"></span><span id="_CPPv2N11SapArgument8shortoptE"></span><span id="SapArgument::shortopt__c"></span><span class="target" id="structSapArgument_1a05ee1aefc215a063dbc556ed511df2a2"></span>char <code class="sig-name descname">shortopt</code><a class="headerlink" href="#_CPPv4N11SapArgument8shortoptE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Short option. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument7longoptE">
+<span id="_CPPv3N11SapArgument7longoptE"></span><span id="_CPPv2N11SapArgument7longoptE"></span><span id="SapArgument::longopt__cCP"></span><span class="target" id="structSapArgument_1a69a892cfd98c9368e2d2596e408c0442"></span><em class="property">const</em> char *<code class="sig-name descname">longopt</code><a class="headerlink" href="#_CPPv4N11SapArgument7longoptE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Long option name / argument name. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument4helpE">
+<span id="_CPPv3N11SapArgument4helpE"></span><span id="_CPPv2N11SapArgument4helpE"></span><span id="SapArgument::help__cCP"></span><span class="target" id="structSapArgument_1ab1fe4c7ecd237cfaa1fe396c2d47c6f4"></span><em class="property">const</em> char *<code class="sig-name descname">help</code><a class="headerlink" href="#_CPPv4N11SapArgument4helpE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Short help message. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument4typeE">
+<span id="_CPPv3N11SapArgument4typeE"></span><span id="_CPPv2N11SapArgument4typeE"></span><span id="SapArgument::type__SapArgumentType"></span><span class="target" id="structSapArgument_1aaa8ba7953ada5cb8e799f28265f3ecbb"></span><a class="reference internal" href="#_CPPv415SapArgumentType" title="SapArgumentType">SapArgumentType</a> <code class="sig-name descname">type</code><a class="headerlink" href="#_CPPv4N11SapArgument4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Type of argument. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument8requiredE">
+<span id="_CPPv3N11SapArgument8requiredE"></span><span id="_CPPv2N11SapArgument8requiredE"></span><span id="SapArgument::required__i"></span><span class="target" id="structSapArgument_1a7f61f585695781f0e4ea14465d029a62"></span>int <code class="sig-name descname">required</code><a class="headerlink" href="#_CPPv4N11SapArgument8requiredE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>1 if argument is required, 0 otherwise </p>
+<p>All arguments of type SAP_ARG_POSITIONAL are considered required regardless of this value </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument3setE">
+<span id="_CPPv3N11SapArgument3setE"></span><span id="_CPPv2N11SapArgument3setE"></span><span id="SapArgument::set__i"></span><span class="target" id="structSapArgument_1a0f6478c16cf321ab7b089f80ce1a2778"></span>int <code class="sig-name descname">set</code><a class="headerlink" href="#_CPPv4N11SapArgument3setE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Will be set to 1 if argument has been provided, 0 otherwise. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11SapArgument5valueE">
+<span id="_CPPv3N11SapArgument5valueE"></span><span id="_CPPv2N11SapArgument5valueE"></span><span id="SapArgument::value__cCP"></span><span class="target" id="structSapArgument_1af7f7be274e99663d24814545c2384e13"></span><em class="property">const</em> char *<code class="sig-name descname">value</code><a class="headerlink" href="#_CPPv4N11SapArgument5valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Value set for this argument. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="argument-types">
+<h3><a class="toc-backref" href="#id6">Argument types</a><a class="headerlink" href="#argument-types" title="Permalink to this headline">¶</a></h3>
+<p>Argument types are specified using this enum:</p>
+<dl class="cpp enum">
+<dt id="_CPPv415SapArgumentType">
+<span id="_CPPv315SapArgumentType"></span><span id="_CPPv215SapArgumentType"></span><span class="target" id="sap_8h_1af0ad10ad2bf60d2b1c8dd73f02561f07"></span><em class="property">enum </em><code class="sig-name descname">SapArgumentType</code><a class="headerlink" href="#_CPPv415SapArgumentType" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enum describing argument type. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N15SapArgumentType14SAP_ARG_OPTIONE">
+<span id="_CPPv3N15SapArgumentType14SAP_ARG_OPTIONE"></span><span id="_CPPv2N15SapArgumentType14SAP_ARG_OPTIONE"></span><span class="target" id="sap_8h_1af0ad10ad2bf60d2b1c8dd73f02561f07a3c899633c42d6f5faace84be06c361e9"></span><em class="property">enumerator </em><code class="sig-name descname">SAP_ARG_OPTION</code><a class="headerlink" href="#_CPPv4N15SapArgumentType14SAP_ARG_OPTIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Option that does not take value. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N15SapArgumentType20SAP_ARG_OPTION_VALUEE">
+<span id="_CPPv3N15SapArgumentType20SAP_ARG_OPTION_VALUEE"></span><span id="_CPPv2N15SapArgumentType20SAP_ARG_OPTION_VALUEE"></span><span class="target" id="sap_8h_1af0ad10ad2bf60d2b1c8dd73f02561f07aec44d17d6e54621ceeb1bc3f4b5c3005"></span><em class="property">enumerator </em><code class="sig-name descname">SAP_ARG_OPTION_VALUE</code><a class="headerlink" href="#_CPPv4N15SapArgumentType20SAP_ARG_OPTION_VALUEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Option that takes value. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N15SapArgumentType18SAP_ARG_POSITIONALE">
+<span id="_CPPv3N15SapArgumentType18SAP_ARG_POSITIONALE"></span><span id="_CPPv2N15SapArgumentType18SAP_ARG_POSITIONALE"></span><span class="target" id="sap_8h_1af0ad10ad2bf60d2b1c8dd73f02561f07ae18a4e465ca97a16147a2b977f4bbcf5"></span><em class="property">enumerator </em><code class="sig-name descname">SAP_ARG_POSITIONAL</code><a class="headerlink" href="#_CPPv4N15SapArgumentType18SAP_ARG_POSITIONALE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Positional argument. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h3><a class="toc-backref" href="#id7">Functions</a><a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>After configuration, these 2 functions are used for the actual
+processing.</p>
+<dl class="cpp function">
+<dt id="_CPPv414sap_parse_args9SapConfigiPPc">
+<span id="_CPPv314sap_parse_args9SapConfigiPPc"></span><span id="_CPPv214sap_parse_args9SapConfigiPPc"></span><span id="sap_parse_args__SapConfig.i.cPP"></span><span class="target" id="sap_8h_1a53002d7623bd466c74fc5760d343c2df"></span>int <code class="sig-name descname">sap_parse_args</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49SapConfig" title="SapConfig">SapConfig</a> <em>config</em>, int <em>argc</em>, char **<em>argv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414sap_parse_args9SapConfigiPPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Parses arguments provided with the provided configuration, prints help message if unsuccessful. </p>
+<p>Stores parsed argument values into config.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 If arguments parsed succesfully </p>
+</dd>
+<dt><strong>Return</strong></dt><dd><p>1 If arguments were invalid </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>: The <a class="reference internal" href="#structSapConfig"><span class="std std-ref">SapConfig</span></a> to use </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argc</span></code>: Argument count </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argv</span></code>: Argument values </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414sap_print_help9SapConfig">
+<span id="_CPPv314sap_print_help9SapConfig"></span><span id="_CPPv214sap_print_help9SapConfig"></span><span id="sap_print_help__SapConfig"></span><span class="target" id="sap_8h_1aa65ccd2610e7acabe864587026b804bd"></span>void <code class="sig-name descname">sap_print_help</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49SapConfig" title="SapConfig">SapConfig</a> <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414sap_print_help9SapConfig" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prints help message based on configuration. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config</span></code>: The <a class="reference internal" href="#structSapConfig"><span class="std std-ref">SapConfig</span></a> to use </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contact.html" class="btn btn-neutral float-right" title="Contact" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Chua Hou
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -2,22 +2,6 @@
 // Copyright (c) 2020 Chua Hou
 
 /**
- * @mainpage
- * @section Introduction
- *
- * A simple argument parser written for C/C++ CLI applications. It is written in
- * C such that both only-C applications and C++ applications can make use of it.
- *
- * It is inspired by some basic functionality from clap from Rust in terms of
- * the desired output, but is nowhere near as function-complete. I only aim to
- * properly implement in a reusable fashion the functionality I need
- * to use for my own projects.
- *
- * I chose not to use getopt or any other similar options as I would like my
- * projects to be portable across as many platforms as possible.
- */
-
-/**
  * @file sap.h
  * @brief Primary header file for sap
  */
@@ -166,7 +150,9 @@ typedef struct SapConfig
 
 /**
  * @brief Parses arguments provided with the provided configuration, prints
- * help message if unsuccessful
+ * help message if unsuccessful.
+ *
+ * Stores parsed argument values into config.
  *
  * @param config The SapConfig to use
  * @param argc Argument count

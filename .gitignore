@@ -2,8 +2,8 @@
 build/
 /build/
 
-# ignore documentation
-docs/
+# ignore generated Doxygen documentation
+/docsrc/xml
 
 # ignore VS files
 .vs/

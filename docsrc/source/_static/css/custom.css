@@ -1,0 +1,15 @@
+p {
+	margin: 10px;
+}
+
+th > p, td > p, li > p, li > a, .rst-content .section ul p {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 1.3em;
+}
+
+.rst-content pre.literal-block, .rst-content div[class^="highlight"] {
+	margin: 1em 0 1em 0;
+}
