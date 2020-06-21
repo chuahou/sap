@@ -4,7 +4,7 @@
  */
 
 // version macros (do them however your project does them, as long as they can
-// be accessed later
+// be accessed later)
 #define SAP_EXAMPLE_MAJOR_VERSION 0
 #define SAP_EXAMPLE_MINOR_VERSION 0
 #define SAP_EXAMPLE_REVISION      1
