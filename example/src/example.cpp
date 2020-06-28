@@ -232,7 +232,7 @@ int main(int argc, char **argv) // get arguments the normal way
 			std::cout << i_x % i_y << std::endl;
 		else
 		{
-			std::cerr << "Modulo not supportd for floats" << std::endl;
+			std::cerr << "Modulo not supported for floats" << std::endl;
 			return 1;
 		}
 	}
